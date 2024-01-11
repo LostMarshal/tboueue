@@ -38,7 +38,6 @@ export class LoginComponent {
         user.password === this.authen.password
     );
     if (foundUser) {
-      this.authen.isLogin= true
       alert('Login Success');
       this.router.navigate(['/landing-page']);
     } else {
