@@ -1,0 +1,53 @@
+<router-outlet *ngIf="!authen.isLogin"></router-outlet>
+<div class="container">
+    <div class="card" [hidden]="!LoginForm">
+        <div class="card-body">
+            <form class="login-form">
+                <h1>Sign In</h1>
+                <label for="username">Username</label>
+                <input type="text" name="username" required [(ngModel)]="authen.username" />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" required [(ngModel)]="authen.password" />
+
+                <button type="button" (click)="login()">Sign In</button>
+                <br>
+            </form>
+            <div class="side-background">
+                <br>
+                <h1>Selamat Datang</h1>
+                <br>
+                Apakah ini pertama kali anda kesini?
+                <br>
+                <br>
+                <button type="button" (click)="showRegisterForm()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <div class="card" [hidden]="LoginForm">
+        <div class="card-body">
+            <form class="register-form">
+                <h1>Sign Up</h1>
+                <label for="username">Username</label>
+                <input type="text" name="username" required [(ngModel)]="authen.username" />
+
+                <label for="password">Password</label>
+                <input type="password" name="password" required [(ngModel)]="authen.password" />
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" name="confirm-password" required [(ngModel)]="authen.confirmPassword" />
+
+                <button type="button" (click)="register()">Sign Up</button>
+            </form>
+            <div class="side-background">
+                <br>
+                <h1>Selamat Datang</h1>
+                <br>
+                Apakah anda sudah memiliki akun?
+                <br>
+                <br>
+                <button type="button" (click)="showLoginForm()">Sign In</button>
+            </div>
+        </div>
+    </div>
+</div>

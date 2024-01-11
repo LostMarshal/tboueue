@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="title">
+        <h1 style="text-align: center; font-size: 24px; color: #333;">What's in this web?</h1>
+    </div>
+    <div class="content">
+        <p style="text-align: center; font-size: 16px; color: #666;">
+            There's nothing in this web, this web is meant to be a simulation of a marketplace.
+            There's no real transaction, no real money, no real product, no real anything.
+            It's just meant to be a simulation, but this web developer can't quite reach the deadline.
+            So this is all of it, thanks
+        </p>
+        <h2 style="text-align: center; font-size: 20px; color: #333;">
+            Here's the example of market card
+        </h2>
+        <div class="card-container">
+            <div class="card" *ngFor="let item of marketItems">
+                <div class="card-body">
+                    <h3>{{ item.name }}</h3>
+                    <img src="{{ item.price }}" alt="{{ item.name }}">
+                    <p>{{ item.description }}</p>
+                    <p>Price: {{ item.price }}</p>
+                </div>
+            </div>
+        </div>
+        <h2 style="text-align: center; font-size: 20px; color: #333;">
+            Add items
+        </h2>
+        <div class="add-container">
+            <form class="add-form">
+                <label for="name">Name</label>
+                <input type="text" name="name" [(ngModel)]="marketItem.name" class="form-input" />
+                <label for="description">Description</label>
+                <input type="text" name="description" [(ngModel)]="marketItem.description" class="form-input" />
+                <label for="price">Price</label>
+                <input type="text" name="price" [(ngModel)]="marketItem.price" class="form-input" />
+                <button type="button" (click)="addItem()" class="form-button">Add</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        <h2 style="text-align: center; font-size: 20px; color: #333;">
+            Delete Items
+        </h2>
+        <div class="delete-container">
+            <form class="delete-form">
+                <label for="name">Name</label>
+                <input type="text" name="name" [(ngModel)]="marketItem.name" class="form-input" />
+                <button type="button" (click)="deleteItem(marketItem.name)" class="form-button">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
